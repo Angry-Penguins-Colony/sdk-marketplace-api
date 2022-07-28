@@ -2,10 +2,10 @@
   "name": "@apc/sdk-marketplace-api",
   "version": "1.0.1",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
   "files": [
-    "dist/**/*"
+    "out/**/*"
   ],
   "scripts": {
     "build": "tsc",
