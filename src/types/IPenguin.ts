@@ -1,11 +1,11 @@
-import { Nonce } from '@elrondnetwork/erdjs/out';
 import IItem from './IItem';
+import { INonce } from './INonce';
 import IOffer from './IOffer';
 
 export default interface IPenguin {
     identifier: string,
     name: string,
-    nonce: Nonce,
+    nonce: INonce,
     score: number,
     purchaseDate: Date,
     thumbnailCID: string,

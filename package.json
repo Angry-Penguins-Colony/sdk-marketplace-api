@@ -1,6 +1,6 @@
 {
   "name": "sdk-marketplace-api",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,7 +25,11 @@
   },
   "homepage": "https://github.com/Angry-Penguins-Colony/sdk-marketplace-api#readme",
   "devDependencies": {
+    "@types/node": "^18.6.2",
     "husky": "^8.0.1",
     "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "bignumber.js": "^9.0.2"
   }
 }
