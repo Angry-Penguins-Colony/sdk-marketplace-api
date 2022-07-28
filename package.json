@@ -1,5 +1,5 @@
 {
-  "name": "@apc/sdk-marketplace-api",
+  "name": "@apc/marketplace-api",
   "version": "1.0.0",
   "description": "",
   "main": "out/index.js",
