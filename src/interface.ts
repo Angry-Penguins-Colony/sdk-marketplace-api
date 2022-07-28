@@ -25,6 +25,12 @@ export interface IPenguin {
     offer?: IOffer | undefined
 }
 
+export interface IEgg {
+    tier: "silver" | "gold" | "diamond",
+    name: string,
+    thumbnailCID: string,
+}
+
 export interface IAddress {
     hex(): string;
     bech32(): string;
