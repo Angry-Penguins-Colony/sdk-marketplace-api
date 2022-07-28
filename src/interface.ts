@@ -5,6 +5,7 @@ export interface IItem {
     nonce: INonce,
     slot: ISlotname,
     name: string,
+    description: string,
     thumbnailCID: string,
     offers?: IOffer[],
 }
