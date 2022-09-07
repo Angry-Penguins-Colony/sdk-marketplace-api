@@ -2,8 +2,8 @@ import BigNumber from 'bignumber.js';
 
 export interface IItem {
     identifier: string,
-    nonce: INonce,
-    slot: ISlotname,
+    nonce: number,
+    slot: string,
     name: string,
     description: string,
     thumbnailCID: string,
@@ -13,7 +13,7 @@ export interface IItem {
 export interface IPenguin {
     identifier: string,
     name: string,
-    nonce: INonce,
+    nonce: number,
     score: number,
     purchaseDate: Date,
     thumbnailCID: string,
@@ -30,12 +30,4 @@ export interface IAddress {
     hex(): string;
     bech32(): string;
     pubkey(): Buffer;
-}
-
-export interface INonce {
-    valueOf(): number;
-}
-
-export interface ISlotname {
-    valueOf(): string;
 }
