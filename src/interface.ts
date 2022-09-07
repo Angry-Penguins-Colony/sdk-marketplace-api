@@ -7,12 +7,7 @@ export interface IItem {
     name: string,
     description: string,
     thumbnailCID: string,
-    offers?: IOffer[],
-}
-
-export interface IOffer {
-    price: BigNumber,
-    listedBy: IAddress
+    amount: string
 }
 
 export interface IPenguin {
@@ -23,7 +18,6 @@ export interface IPenguin {
     purchaseDate: Date,
     thumbnailCID: string,
     equippedItems: { [key: string]: IItem; },
-    offer?: IOffer | undefined
 }
 
 export interface IEgg {
