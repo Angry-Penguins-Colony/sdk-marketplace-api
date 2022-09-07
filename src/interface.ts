@@ -7,7 +7,7 @@ export interface IItem {
     name: string,
     description: string,
     thumbnailCID: string,
-    amount: string
+    amount: number
 }
 
 export interface IPenguin {
