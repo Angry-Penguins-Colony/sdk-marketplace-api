@@ -7,6 +7,7 @@ export interface IItem {
     name: string,
     description: string,
     thumbnailCID: string,
+    renderCID: string,
     amount: number
 }
 
