@@ -1,4 +1,4 @@
-export default class Attributes {
+export class Attributes {
 
     private _map = new Map<string, string>();
 
@@ -42,6 +42,16 @@ export default class Attributes {
         function capitalizeSlot(slot: string) {
             return slot.charAt(0).toUpperCase() + slot.slice(1);
         }
+    }
+
+    public toApiParameters(): string {
+
+        if (this._map.size == 0) return "";
+
+        const entries = Array.from(this._map.entries());
+
+        return entries
+            .map(([slot, item]) => `${slot}=${item}`).join("&");
     }
 
     public equals(other: Attributes): boolean {

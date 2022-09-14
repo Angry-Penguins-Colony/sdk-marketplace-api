@@ -1,4 +1,4 @@
-import Attributes from "./classes"
+import { Attributes } from "./classes"
 
 test("fromEndpointArgument", () => {
     const actual = Attributes.fromEndpointArgument("Background:Background 6;Beak:Beak Silver;Clothes:Clothes Hawaii Shirt Blue;Eyes:Eyes Hanging;Hat:Hat Headscarf Pirate APC;Weapon:Weapon Bow");
@@ -88,3 +88,22 @@ describe("from", () => {
         expect(a.equals(b)).toBeFalsy();
     });
 });
+
+describe("toApiParameters", () => {
+    test("empty", () => {
+        expect(new Attributes().toApiParameters()).toEqual("");
+    })
+
+    test("one", () => {
+        expect(new Attributes({
+            "background": "Background 6",
+        }).toApiParameters()).toEqual("background=Background 6");
+    });
+
+    test("two", () => {
+        expect(new Attributes({
+            "background": "Background 6",
+            "beak": "Beak Silver",
+        }).toApiParameters()).toEqual("background=Background 6&beak=Beak Silver");
+    });
+})
