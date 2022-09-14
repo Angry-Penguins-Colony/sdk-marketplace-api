@@ -51,7 +51,8 @@ export class Attributes {
         const entries = Array.from(this._map.entries());
 
         return entries
-            .map(([slot, item]) => `${slot}=${item}`).join("&");
+            .map(([slot, item]) => `${slot}=${item.replace(" ", "%20")}`)
+            .join("&");
     }
 
     public equals(other: Attributes): boolean {

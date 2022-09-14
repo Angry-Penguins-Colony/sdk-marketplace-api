@@ -97,13 +97,13 @@ describe("toApiParameters", () => {
     test("one", () => {
         expect(new Attributes({
             "background": "Background 6",
-        }).toApiParameters()).toEqual("background=Background 6");
+        }).toApiParameters()).toEqual("background=Background%206");
     });
 
     test("two", () => {
         expect(new Attributes({
             "background": "Background 6",
             "beak": "Beak Silver",
-        }).toApiParameters()).toEqual("background=Background 6&beak=Beak Silver");
+        }).toApiParameters()).toEqual("background=Background%206&beak=Beak%20Silver");
     });
 })
