@@ -32,3 +32,10 @@ export interface IAddress {
     bech32(): string;
     pubkey(): Buffer;
 }
+
+export interface IAttributesStatus {
+    cid?: string;
+    renderStatus: RenderStatus;
+}
+
+export type RenderStatus = "none" | "rendering" | "rendered";
