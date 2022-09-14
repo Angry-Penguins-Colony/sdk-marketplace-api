@@ -43,4 +43,26 @@ export default class Attributes {
             return slot.charAt(0).toUpperCase() + slot.slice(1);
         }
     }
+
+    public equals(other: Attributes): boolean {
+
+        return compareMaps(other._map, this._map);
+    }
+}
+
+// https://stackoverflow.com/questions/35948335/how-can-i-check-if-two-map-objects-are-equal
+function compareMaps<K, V>(map1: Map<K, V>, map2: Map<K, V>) {
+    var testVal;
+    if (map1.size !== map2.size) {
+        return false;
+    }
+    for (var [key, val] of map1) {
+        testVal = map2.get(key);
+        // in cases of an undefined value, make sure the key
+        // actually exists on the object so there are no false positives
+        if (testVal !== val || (testVal === undefined && !map2.has(key))) {
+            return false;
+        }
+    }
+    return true;
 }
