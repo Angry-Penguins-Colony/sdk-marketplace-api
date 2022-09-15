@@ -1,3 +1,5 @@
+import { iterablesSlots } from "./type";
+
 export class Attributes {
 
     private _map = new Map<string, string>();
@@ -36,6 +38,13 @@ export class Attributes {
 
         const entries = Array.from(this._map.entries());
 
+
+        for (const slot of iterablesSlots) {
+            if (!this._map.has(slot)) {
+                entries.push([slot, "unequipped"]);
+            }
+        }
+
         return entries
             .map(([slot, item]) => `${capitalizeSlot(slot)}:${item}`).join(";");
 
@@ -47,6 +56,7 @@ export class Attributes {
     public toApiParameters(): string {
 
         if (this._map.size == 0) return "";
+
 
         const entries = Array.from(this._map.entries());
 

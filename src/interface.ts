@@ -1,4 +1,5 @@
 import BigNumber from 'bignumber.js';
+import { RenderStatus } from './type';
 
 export interface IItem {
     /**
@@ -44,5 +45,3 @@ export interface IAttributesStatus {
     cid?: string;
     renderStatus: RenderStatus;
 }
-
-export type RenderStatus = "none" | "rendering" | "rendered";

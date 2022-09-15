@@ -23,7 +23,7 @@ test("toEndpointArgument", () => {
         "hat": "Hat Headscarf Pirate APC",
         "weapon": "Weapon Bow"
     }).toEndpointArgument();
-    const expected = "Background:Background 6;Beak:Beak Silver;Clothes:Clothes Hawaii Shirt Blue;Eyes:Eyes Hanging;Hat:Hat Headscarf Pirate APC;Weapon:Weapon Bow";
+    const expected = "Background:Background 6;Beak:Beak Silver;Clothes:Clothes Hawaii Shirt Blue;Eyes:Eyes Hanging;Hat:Hat Headscarf Pirate APC;Weapon:Weapon Bow;Skin:unequipped";
 
     expect(actual).toEqual(expected);
 });
