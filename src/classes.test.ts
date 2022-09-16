@@ -45,6 +45,7 @@ describe("equals", () => {
         });
 
         expect(a.equals(b)).toBeTruthy();
+        expect(b.equals(a)).toBeTruthy();
     });
 
     test("not equals with a different length", () => {
@@ -58,6 +59,7 @@ describe("equals", () => {
         });
 
         expect(a.equals(b)).toBeFalsy();
+        expect(b.equals(a)).toBeFalsy();
     });
 
     test("not equals with a different item", () => {
@@ -72,6 +74,7 @@ describe("equals", () => {
         });
 
         expect(a.equals(b)).toBeFalsy();
+        expect(b.equals(a)).toBeFalsy();
     });
 
     test("not equals with a different slot", () => {
@@ -86,6 +89,22 @@ describe("equals", () => {
         });
 
         expect(a.equals(b)).toBeFalsy();
+        expect(b.equals(a)).toBeFalsy();
+    });
+
+    test("not equals equals ignore unequipped", () => {
+        const a = new Attributes({
+            "background": "Background 6",
+            "beak": "unequipped",
+        });
+
+        const b = new Attributes({
+            "background": "Background 6",
+            "hat": "Some Hat"
+        });
+
+        expect(a.equals(b)).toBeFalsy();
+        expect(b.equals(a)).toBeFalsy();
     });
 
     test("equals ignore unequipped", () => {
@@ -96,10 +115,10 @@ describe("equals", () => {
 
         const b = new Attributes({
             "background": "Background 6",
-            "hat": "Beak Silver",
         });
 
         expect(a.equals(b)).toBeTruthy();
+        expect(b.equals(a)).toBeTruthy();
     });
 });
 
@@ -120,4 +139,19 @@ describe("toApiParameters", () => {
             "beak": "Beak Silver",
         }).toApiParameters()).toEqual("background=Background%206&beak=Beak%20Silver");
     });
+})
+
+// todo: integration test => parsing+equals w/ problematic data
+
+describe("integration test", () => {
+    test("should be equals after parsing", () => {
+
+        const endpointArgument = "Background:Oceanic Trench;Eyes:Purple Headband;Weapon:Spear;Beak:unequipped;Clothes:unequipped;Hat:unequipped;Skin:unequipped";
+
+        const a = Attributes.fromEndpointArgument(endpointArgument);
+        const b = Attributes.fromEndpointArgument(endpointArgument);
+
+        expect(a.equals(b)).toBeTruthy();
+        expect(b.equals(a)).toBeTruthy();
+    })
 })
