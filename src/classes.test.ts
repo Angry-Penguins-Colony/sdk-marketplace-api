@@ -28,7 +28,7 @@ test("toEndpointArgument", () => {
     expect(actual).toEqual(expected);
 });
 
-describe("from", () => {
+describe("equals", () => {
     test("empty", () => {
         expect(new Attributes().equals(new Attributes())).toBeTruthy();
     });
@@ -86,6 +86,20 @@ describe("from", () => {
         });
 
         expect(a.equals(b)).toBeFalsy();
+    });
+
+    test("equals ignore unequipped", () => {
+        const a = new Attributes({
+            "background": "Background 6",
+            "beak": "unequipped",
+        });
+
+        const b = new Attributes({
+            "background": "Background 6",
+            "hat": "Beak Silver",
+        });
+
+        expect(a.equals(b)).toBeTruthy();
     });
 });
 

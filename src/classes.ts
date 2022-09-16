@@ -67,23 +67,23 @@ export class Attributes {
 
     public equals(other: Attributes): boolean {
 
-        return compareMaps(other._map, this._map);
-    }
-}
+        const map1 = this._map;
+        const map2 = other._map;
 
-// https://stackoverflow.com/questions/35948335/how-can-i-check-if-two-map-objects-are-equal
-function compareMaps<K, V>(map1: Map<K, V>, map2: Map<K, V>) {
-    var testVal;
-    if (map1.size !== map2.size) {
-        return false;
-    }
-    for (var [key, val] of map1) {
-        testVal = map2.get(key);
-        // in cases of an undefined value, make sure the key
-        // actually exists on the object so there are no false positives
-        if (testVal !== val || (testVal === undefined && !map2.has(key))) {
+        // https://stackoverflow.com/questions/35948335/how-can-i-check-if-two-map-objects-are-equal
+        if (map1.size !== map2.size) {
             return false;
         }
+
+        for (const kvp of map1) {
+            const key = kvp[0];
+            const value1 = kvp[1] == "unequipped" ? undefined : kvp[1];
+            const value2 = map2.get(key) == "unequipped" ? undefined : map2.get(key);
+
+            if (value2 !== value1) {
+                return false;
+            }
+        }
+        return true;
     }
-    return true;
 }
