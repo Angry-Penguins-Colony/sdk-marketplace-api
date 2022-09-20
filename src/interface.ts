@@ -23,7 +23,7 @@ export interface IPenguin {
     /**
      * Penguin #{id}
      */
-    id: string,
+    id: number,
     /**
      * The collection + nonce; eg. HAT-a1a1a1-01
      */
