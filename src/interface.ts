@@ -5,7 +5,7 @@ export interface IItem {
     /**
      * The id in the database before the item is minted
      */
-    databaseId: string,
+    id: string,
     /**
      * The collection + nonce; eg. HAT-a1a1a1-01
      */
