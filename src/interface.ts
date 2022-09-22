@@ -60,3 +60,7 @@ export interface IActivity {
     to: string;
     date: string;
 }
+
+export interface IOffer {
+    price: number;
+}
