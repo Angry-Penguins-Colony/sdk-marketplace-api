@@ -52,3 +52,11 @@ export interface IAttributesStatus {
     cid?: string;
     renderStatus: RenderStatus;
 }
+
+export interface IActivity {
+    txHash: string;
+    price: number;
+    from: string;
+    to: string;
+    date: string;
+}
