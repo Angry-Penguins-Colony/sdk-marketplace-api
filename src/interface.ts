@@ -34,7 +34,10 @@ export interface IPenguin {
     purchaseDate: Date,
     thumbnailCID: string,
     equippedItems: { [key: string]: IItem; },
-    owner: IAddress,
+    /**
+     * Bech32
+     */
+    owner: string,
 }
 
 export interface IEgg {
