@@ -66,5 +66,8 @@ export interface IActivity {
 }
 
 export interface IOffer {
-    price: number;
+
+    price: BigNumber;
+    collection: string;
+    nonce: number;
 }
