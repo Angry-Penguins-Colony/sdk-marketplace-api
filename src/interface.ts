@@ -67,6 +67,7 @@ export interface IActivity {
 
 export interface IOffer {
 
+    id: number;
     price: BigNumber;
     collection: string;
     nonce: number;
