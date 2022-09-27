@@ -71,4 +71,5 @@ export interface IOffer {
     price: BigNumber;
     collection: string;
     nonce: number;
+    seller: string;
 }
