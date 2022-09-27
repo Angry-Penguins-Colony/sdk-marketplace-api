@@ -16,7 +16,7 @@ export interface IItem {
     description: string,
     thumbnailCID: string,
     renderCID: string,
-    amount: number
+    amount?: number
 }
 
 export interface IPenguin {
