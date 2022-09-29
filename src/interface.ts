@@ -1,4 +1,3 @@
-import BigNumber from 'bignumber.js';
 import { RenderStatus } from './type';
 
 export interface IItem {
@@ -68,7 +67,7 @@ export interface IActivity {
 export interface IOffer {
 
     id: number;
-    price: BigNumber;
+    price: number;
     collection: string;
     nonce: number;
     seller: string;
