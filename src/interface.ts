@@ -67,7 +67,7 @@ export interface IActivity {
 export interface IOffer {
 
     id: number;
-    price: number;
+    price: string;
     collection: string;
     nonce: number;
     seller: string;
