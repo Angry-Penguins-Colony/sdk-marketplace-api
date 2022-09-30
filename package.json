@@ -1,6 +1,6 @@
 {
   "name": "@apcolony/marketplace-api",
-  "version": "1.0.28",
+  "version": "1.0.29",
   "description": "",
   "main": "out/index.js",
   "types": "out/index.d.ts",
