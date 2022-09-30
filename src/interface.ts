@@ -72,3 +72,10 @@ export interface IOffer {
     nonce: number;
     seller: string;
 }
+
+export interface IMarketData {
+    floorPrice: string;
+    totalVolume: string;
+    averagePrice: string;
+    totalListed: number;
+}
