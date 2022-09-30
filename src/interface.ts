@@ -1,5 +1,7 @@
 import { RenderStatus } from './type';
 
+type Price = string;
+
 export interface IItem {
     /**
      * The id in the database before the item is minted
@@ -58,7 +60,7 @@ export interface IAttributesStatus {
 
 export interface IActivity {
     txHash: string;
-    price: number;
+    price: Price;
     from: string;
     to: string;
     date: string;
@@ -67,15 +69,15 @@ export interface IActivity {
 export interface IOffer {
 
     id: number;
-    price: string;
+    price: Price;
     collection: string;
     nonce: number;
     seller: string;
 }
 
 export interface IMarketData {
-    floorPrice: string;
+    floorPrice: Price;
     totalVolume: string;
-    averagePrice: string;
+    averagePrice: Price;
     totalListed: number;
 }
