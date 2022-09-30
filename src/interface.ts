@@ -61,9 +61,9 @@ export interface IAttributesStatus {
 export interface IActivity {
     txHash: string;
     price: Price;
-    from: string;
-    to: string;
-    date: string;
+    seller: string;
+    buyer: string;
+    date: number;
 }
 
 export interface IOffer {
