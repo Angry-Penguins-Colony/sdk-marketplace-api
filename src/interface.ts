@@ -1,6 +1,26 @@
-import { RenderStatus } from './type';
+import { ElementType, RenderStatus } from './type';
 
 type Price = string;
+
+
+/**
+ * A element that can be either an item or a penguin
+ */
+export interface IGenericElement {
+    id: string;
+    type: ElementType;
+
+    name: string;
+    thumbnail: string;
+
+    collection: string;
+    nonce: number;
+
+    floorPrice?: number;
+    items?: IItem[];
+    amount?: number;
+    owner?: string;
+}
 
 export interface IItem {
     /**
