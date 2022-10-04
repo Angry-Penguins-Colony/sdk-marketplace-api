@@ -11,53 +11,25 @@ export interface IGenericElement {
     type: ElementType;
 
     name: string;
-    thumbnail: string;
+    thumbnailCID: string;
 
+    /**
+     * The collection + nonce; eg. HAT-a1a1a1-01
+     */
+    identifier: string;
     collection: string;
     nonce: number;
-
-    floorPrice?: number;
-    items?: IItem[];
-    amount?: number;
-    owner?: string;
 }
 
-export interface IItem {
-    /**
-     * The id in the database before the item is minted
-     */
-    id: string,
-    /**
-     * The collection + nonce; eg. HAT-a1a1a1-01
-     */
-    identifier: string,
-    nonce: number,
+export interface IItem extends IGenericElement {
     slot: string,
-    name: string,
     description: string,
-    thumbnailCID: string,
-    renderCID: string,
-    amount?: number
+    renderCID: string;
 }
 
-export interface IPenguin {
-    /**
-     * Penguin #{id}
-     */
-    id: string,
-    /**
-     * The collection + nonce; eg. HAT-a1a1a1-01
-     */
-    identifier: string,
-    name: string,
-    nonce: number,
-    score: number,
-    purchaseDate: Date,
-    thumbnailCID: string,
+export interface IPenguin extends IGenericElement {
+
     equippedItems: { [key: string]: IItem; },
-    /**
-     * Bech32
-     */
     owner: string,
 }
 
