@@ -25,6 +25,7 @@ export interface IItem extends IGenericElement {
     slot: string,
     description: string,
     renderCID: string;
+    supply: number;
 }
 
 export interface IPenguin extends IGenericElement {
