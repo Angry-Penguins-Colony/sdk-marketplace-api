@@ -11,7 +11,7 @@ export interface IGenericElement {
     type: ElementType;
 
     name: string;
-    thumbnailCID: string;
+    thumbnailWebUri: string;
 
     /**
      * The collection + nonce; eg. HAT-a1a1a1-01
@@ -24,7 +24,7 @@ export interface IGenericElement {
 export interface IItem extends IGenericElement {
     slot: string,
     description: string,
-    renderCID: string;
+    renderUrl: string;
     supply: number;
 }
 
