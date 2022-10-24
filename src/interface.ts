@@ -34,7 +34,10 @@ export interface IGenericElement {
 export interface IItem extends IGenericElement {
     slot: string,
     description: string,
-    renderUrl: string;
+    renderUrls: {
+        ipfs: string;
+        high: string;
+    };
     supply: number;
 }
 
