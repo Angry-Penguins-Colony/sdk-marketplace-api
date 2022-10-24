@@ -11,7 +11,17 @@ export interface IGenericElement {
     type: ElementType;
 
     name: string;
-    thumbnailWebUri: string;
+    thumbnailUrls: {
+        ipfs: string;
+        /**
+         * 1024x1204px
+         */
+        high: string;
+        /**
+         * 512x512px
+         */
+        small: string;
+    };
 
     /**
      * The collection + nonce; eg. HAT-a1a1a1-01
