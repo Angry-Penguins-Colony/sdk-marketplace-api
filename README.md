@@ -1,3 +1,5 @@
+moved to https://github.com/Angry-Penguins-Colony/marketplace.apcolony.com
+
 # sdk-marketplace-api
 
 [![npm version](https://badge.fury.io/js/@apcolony%2Fmarketplace-api.svg)](https://badge.fury.io/js/@apcolony%2Fmarketplace-api)
